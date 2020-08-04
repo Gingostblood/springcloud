@@ -14,8 +14,9 @@ public class AppRun8201 {
     public static void main(String[] args) {
         SpringApplication.run(AppRun8201.class, args);
     }
+
     @GetMapping("/run")
-    public String run(){
+    public String run() {
         return "8201 is running";
     }
 }

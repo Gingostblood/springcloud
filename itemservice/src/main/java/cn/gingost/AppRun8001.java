@@ -21,7 +21,7 @@ public class AppRun8001 {
     }
 
     @GetMapping("/run")
-    public String run(){
+    public String run() {
         return "8081 is running";
     }
 }

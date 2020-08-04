@@ -40,10 +40,12 @@ import com.fasterxml.jackson.module.paramnames.ParameterNamesModule;
  **/
 
 @Slf4j
-public class JsonUtil { private static ObjectMapper mapper;
+public class JsonUtil {
+    private static ObjectMapper mapper;
     private static JsonInclude.Include DEFAULT_PROPERTY_INCLUSION = JsonInclude.Include.NON_DEFAULT;
     private static boolean IS_ENABLE_INDENT_OUTPUT = false;
     private static String CSV_DEFAULT_COLUMN_SEPARATOR = ",";
+
     static {
         try {
             initMapper();
@@ -92,6 +94,7 @@ public class JsonUtil { private static ObjectMapper mapper;
         objectMapper.registerModule(new JavaTimeModule());
         objectMapper.registerModule(new GuavaModule());
     }
+
     public static void setSerializationInclusion(JsonInclude.Include inclusion) {
         DEFAULT_PROPERTY_INCLUSION = inclusion;
         configPropertyInclusion();
@@ -369,7 +372,8 @@ public class JsonUtil { private static ObjectMapper mapper;
             return null;
         }
         String string = getString(json, key);
-        return from(string, new TypeReference<ArrayList<T>>() {});
+        return from(string, new TypeReference<ArrayList<T>>() {
+        });
     }
 
     public static <T> String add(String json, String key, T value) {

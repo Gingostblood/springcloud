@@ -13,19 +13,22 @@ public class CookieUtil {
     public static void setCookie(HttpServletResponse response,
                                  String name, String value, String domain, String path, int maxAge) {
         Cookie cookie = new Cookie(name, value);
-        if(domain != null) {
+        if (domain != null) {
             cookie.setDomain(domain);
         }
         cookie.setPath(path);
         cookie.setMaxAge(maxAge);
         response.addCookie(cookie);
     }
+
     public static void setCookie(HttpServletResponse response, String name, String value, int maxAge) {
         setCookie(response, name, value, null, "/", maxAge);
     }
+
     public static void setCookie(HttpServletResponse response, String name, String value) {
         setCookie(response, name, value, null, "/", 3600);
     }
+
     public static void setCookie(HttpServletResponse response, String name) {
         setCookie(response, name, "", null, "/", 3600);
     }

@@ -1,6 +1,8 @@
 spring:
   application:
     name: eureka-server
+  profiles:
+    active: eureka1
 
 server:
   port: 2001
@@ -21,5 +23,3 @@ eureka:
     register-with-eureka: false
     #    不从自身拉取注册信息
     fetch-registry: false
-    service-url:
-      defaultZone: http://eureka1:2001/eureka

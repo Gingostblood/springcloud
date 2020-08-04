@@ -17,10 +17,11 @@ import org.springframework.web.bind.annotation.RestController;
 @EnableDiscoveryClient
 public class AppRun8101 {
     public static void main(String[] args) {
-        SpringApplication.run(AppRun8101.class,args);
+        SpringApplication.run(AppRun8101.class, args);
     }
+
     @GetMapping("/run")
-    public String run(){
+    public String run() {
         return "8101 is running";
     }
 }
